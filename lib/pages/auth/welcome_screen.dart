@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:habit_tracer/pages/auth/sign_up_screen.dart';
 import '../../const/routes.dart';
@@ -17,61 +15,51 @@ class Welcome extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: kToolbarHeight + 12,
             ),
-            Text(
-              "Welcome",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            Column(
+              children: const [
+                Text(
+                  "Welcome to our Habit Tracker mobile app!",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                    'Start tracking your habits and unlock your full potential for positive change.')
+              ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
-            Text(
-              'Buy any item from using app',
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-            Center(
+            const Center(
               child: Image(
                 image: AssetImage('assets/main.png'),
               ),
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              CupertinoButton(
-                onPressed: () {},
-                padding: EdgeInsets.zero,
-                child: Icon(
-                  Icons.facebook,
-                  size: 45,
-                  color: Colors.blue,
-                ),
+            IconButton(
+              onPressed: () {},
+              icon: Image.asset(
+                'assets/googlelogo.png',
+                scale: 25,
               ),
-              CupertinoButton(
-                onPressed: () {},
-                child: Image.asset(
-                  'assets/googlelogo.png',
-                  scale: 25,
-                ),
-              ),
-            ]),
-            SizedBox(
+            ),
+            const SizedBox(
               height: 18,
             ),
             PrimaryButton(
               title: 'Login',
               onPressed: () {
-                Routes.instance.push(widget: Login(), context: context);
+                Routes.instance.push(widget: const Login(), context: context);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 18,
             ),
             PrimaryButton(
               title: 'Sign Up',
               onPressed: () {
-                Routes.instance.push(widget: SignUpScreen(), context: context);
+                Routes.instance
+                    .push(widget: const SignUpScreen(), context: context);
               },
             ),
           ],
