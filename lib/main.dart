@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:habit_tracer/pages/auth/welcome_screen.dart';
+import 'package:habit_tracer/pages/auth/auth_page.dart';
 import 'package:habit_tracer/widgets/custom_bottom_bar.dart';
 import 'package:provider/provider.dart';
 import 'firebase/firebase_auth_helper.dart';
@@ -33,9 +33,9 @@ class MyApp extends StatelessWidget {
           stream: FirebaseAuthHelper.instance.getAuthChange,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              return CustomBottomBar();
+              return const CustomBottomBar();
             }
-            return Welcome();
+            return const AuthPage();
           },
         ),
       ),
