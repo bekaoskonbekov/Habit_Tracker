@@ -1,12 +1,10 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'dart:io';
-
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:habit_tracer/const/shared/dark_shared.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-
 import '../../const/routes.dart';
 import '../../firebase/firebase_auth_helper.dart';
 import '../../model/user_model.dart';
@@ -22,6 +20,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  bool get isDark => Theme.of(context).brightness == Brightness.dark;
   File? image;
   void takePicture() async {
     XFile? value = await ImagePicker()
@@ -115,10 +114,18 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
           Divider(),
-          ListTile(
-            leading: Icon(Icons.list),
-            title: Text("All of my habits"),
-            trailing: Icon(Icons.arrow_forward_ios),
+
+          SwitchListTile(
+            subtitle: ListTile(
+              leading: Icon(Icons.wb_sunny),
+              title: Text("Dark Mode"),
+            ),
+            value: context.isDark,
+            onChanged: (value) {
+              context.isDark
+                  ? AdaptiveTheme.of(context).setLight()
+                  : AdaptiveTheme.of(context).setDark();
+            },
           ),
           Divider(),
           ListTile(

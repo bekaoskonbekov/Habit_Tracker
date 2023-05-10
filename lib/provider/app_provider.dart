@@ -1,9 +1,6 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
 import '../const/utils.dart';
 import '../firebase/firebase_firestore_helper.dart';
 import '../firebase/firebase_storage_helper.dart';

@@ -9,7 +9,6 @@ class UserModel {
   String? image;
   String name;
   String email;
-
   String id;
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(

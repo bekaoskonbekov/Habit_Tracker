@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:habit_tracer/firebase/firebase_messaging_helper.dart';
+import 'package:habit_tracer/generated/locale_keys.g.dart';
 import '../../widgets/lists.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +14,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _service = FirebaseMessgingHelper();
+  @override
+  void initState() {
+    _service.connectNotisication();
+    // TODO: implement initState
+    super.initState();
+  }
+
   int counter = 0;
   @override
   Widget build(BuildContext context) {
@@ -92,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                   alignment: Alignment.centerLeft,
                   child: Column(children: [
                     Text(
-                      "Hey Hermano!",
+                      LocaleKeys.hey_hermano.tr(),
                       style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
