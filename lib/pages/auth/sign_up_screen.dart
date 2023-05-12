@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:habit_tracer/pages/home/dashboard_screen.dart';
 import '../../const/routes.dart';
 import '../../const/utils.dart';
 
-import '../../firebase/firebase_auth_helper.dart';
+import '../../services/firebase/firebase_auth_helper.dart';
 import '../../widgets/primary_button.dart';
 import '../../widgets/top_titles.dart';
-import '../home/homePage.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -31,7 +31,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const TopTitles(
-                  subtitle: "Welcome Back To E Commerce App",
+                  subtitle: " Welcome back to Habbit Tracker app",
                   title: "Create Account"),
               const SizedBox(
                 height: 46.0,
@@ -108,9 +108,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           email.text, password.text, context, name.text);
                       if (isLogined) {
                         Routes.instance.pushAndRemoveUntil(
-                            widget: HomePage(), context: context);
+                            widget: DashboardScreen(), context: context);
                         Routes.instance.pushAndRemoveUntil(
-                            widget: HomePage(), context: context);
+                            widget: DashboardScreen(), context: context);
                       }
                     }
                   }),

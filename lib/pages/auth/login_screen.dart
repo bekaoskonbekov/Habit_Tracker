@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:habit_tracer/pages/auth/sign_up_screen.dart';
+import 'package:habit_tracer/widgets/custom_bottom_bar.dart';
 import '../../const/routes.dart';
 import '../../const/utils.dart';
-import '../../firebase/firebase_auth_helper.dart';
+import '../../services/firebase/firebase_auth_helper.dart';
 import '../../widgets/primary_button.dart';
 import '../../widgets/top_titles.dart';
-import '../home/homePage.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -30,7 +30,8 @@ class _LoginState extends State<Login> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const TopTitles(
-                  subtitle: "Welcome Back To E Commerce App", title: "Login"),
+                  subtitle: "Welcome back to Habbit Tracker appbeka@gmail.com",
+                  title: "Login"),
               const SizedBox(
                 height: 46.0,
               ),
@@ -82,7 +83,7 @@ class _LoginState extends State<Login> {
                           .login(email.text, password.text, context);
                       if (isLogined) {
                         Routes.instance.pushAndRemoveUntil(
-                            widget: HomePage(), context: context);
+                            widget: CustomBottomBar(), context: context);
                       }
                     }
                   }),

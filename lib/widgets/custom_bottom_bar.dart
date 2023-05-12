@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:habit_tracer/pages/home/add_habit_screen.dart';
+import 'package:habit_tracer/pages/home/dashboard_screen.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import '../pages/home/habitsPage.dart';
-import '../pages/home/homePage.dart';
+import '../pages/home/calendar_page.dart';
 import '../pages/home/profilePage.dart';
-import '../pages/home/progressPage.dart';
 
 class CustomBottomBar extends StatefulWidget {
   const CustomBottomBar({
@@ -19,7 +19,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
   final bool _hideNavBar = false;
 
   List<Widget> _buildScreens() =>
-      [HomePage(), ProgressPage(), Habitspage(), ProfilePage()];
+      [DashboardScreen(), CalenderScreen(), AddHabitScreen(), ProfilePage()];
 
   List<PersistentBottomNavBarItem> _navBarsItems() => [
         PersistentBottomNavBarItem(
@@ -38,8 +38,8 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
         ),
         PersistentBottomNavBarItem(
           icon: const Icon(Icons.circle_rounded),
-          inactiveIcon: const Icon(Icons.timeline),
-          title: "Habbits",
+          inactiveIcon: const Icon(Icons.add),
+          title: "Add Habbit",
           activeColorPrimary: Colors.white,
           inactiveColorPrimary: Colors.white,
         ),

@@ -8,8 +8,8 @@ import 'package:habit_tracer/const/styles/app_themes/light_theme.dart';
 import 'package:habit_tracer/pages/auth/welcome_screen.dart';
 import 'package:habit_tracer/widgets/custom_bottom_bar.dart';
 import 'package:provider/provider.dart';
-import 'firebase/firebase_auth_helper.dart';
-import 'firebase/firebase_options.dart';
+import 'services/firebase/firebase_auth_helper.dart';
+import 'services/firebase/firebase_options.dart';
 import 'provider/app_provider.dart';
 
 void main() async {

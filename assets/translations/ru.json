@@ -1,3 +1,10 @@
 {
-  "hey_hermano": "Привет Херо"
+  "hi": "Привет!",
+  "choose_your_lang": "Выберите ваш язык",
+  "what_a_wonderful_day": "Какой прекрасный день",
+  "change_lang": "Изменить язык",
+  "change_pass": "Изменить пароль",
+  "dark_mode": "Темный режим",
+  "about_this_app": " Об этом приложении",
+  "log_out": "Выйти"
 }

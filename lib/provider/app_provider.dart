@@ -1,13 +1,18 @@
 import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import '../const/utils.dart';
-import '../firebase/firebase_firestore_helper.dart';
-import '../firebase/firebase_storage_helper.dart';
-import '../model/user_model.dart';
 
-class AppProvider extends ChangeNotifier {
+import '../const/utils.dart';
+import '../model/user_model.dart';
+import '../services/firebase/firebase_firestore_helper.dart';
+import '../services/firebase/firebase_storage_helper.dart';
+
+class AppProvider with ChangeNotifier {
+  //// Cart Work
+
   UserModel? _userModel;
+
   UserModel get getUserInformation => _userModel!;
 
   void getUserInfoFirebase() async {
